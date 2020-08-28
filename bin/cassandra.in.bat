@@ -71,4 +71,4 @@ if EXIST "$CASSANDRA_HOME\lib\jsr223\scala\scala-compiler.jar" (
 )
 
 REM Add the sigar-bin path to the java.library.path CASSANDRA-7838
-set JAVA_OPTS=%JAVA_OPTS% -Djava.library.path=%CASSANDRA_HOME%\lib\sigar-bin"
+REM set JAVA_OPTS=%JAVA_OPTS% -Djava.library.path=%CASSANDRA_HOME%\lib\sigar-bin"

@@ -354,7 +354,7 @@ Function SetCassandraEnvironment
     }
 
     # Add sigar env - see Cassandra-7838
-    $env:JVM_OPTS = "$env:JVM_OPTS -Djava.library.path=""$env:CASSANDRA_HOME\lib\sigar-bin"""
+    # $env:JVM_OPTS = "$env:JVM_OPTS -Djava.library.path=""$env:CASSANDRA_HOME\lib\sigar-bin"""
 
     # Confirm we're on high performance power plan, warn if not
     # Change to $true to suppress this warning
@@ -400,11 +400,11 @@ Function SetCassandraEnvironment
     # $env:JVM_OPTS="$env:JVM_OPTS -Dcassandra.printHeapHistogramOnOutOfMemoryError=true"
 
     $env:JAVA_VERSION=11
-    if ($env:JVM_VERSION.CompareTo("1.8.0") -eq -1 -or [convert]::ToInt32($env:JVM_PATCH_VERSION) -lt 151)
-    {
-        echo "Cassandra 4.0 requires either Java 8 (update 151 or newer) or Java 11 (or newer). Java $env:JVM_VERSION is not supported."
-        exit
-    }
+    # if ($env:JVM_VERSION.CompareTo("1.8.0") -eq -1 -or [convert]::ToInt32($env:JVM_PATCH_VERSION) -lt 151)
+    # {
+    #     echo "Cassandra 4.0 requires either Java 8 (update 151 or newer) or Java 11 (or newer). Java $env:JVM_VERSION is not supported."
+    #     exit
+    # }
 
     # Specifies the default port over which Cassandra will be available for
     # JMX connections.
